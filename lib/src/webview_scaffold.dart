@@ -39,6 +39,7 @@ class WebviewScaffold extends StatefulWidget {
     this.resizeToAvoidBottomInset = false,
     this.invalidUrlRegex,
     this.geolocationEnabled,
+    this.permissions = "*",
     this.debuggingEnabled = false,
     this.ignoreSSLErrors = false,
   }) : super(key: key);
@@ -70,6 +71,7 @@ class WebviewScaffold extends StatefulWidget {
   final bool resizeToAvoidBottomInset;
   final String invalidUrlRegex;
   final bool geolocationEnabled;
+  final String permissions;
   final bool withOverviewMode;
   final bool useWideViewPort;
   final bool debuggingEnabled;
@@ -178,6 +180,7 @@ class _WebviewScaffoldState extends State<WebviewScaffold> {
               allowFileURLs: widget.allowFileURLs,
               invalidUrlRegex: widget.invalidUrlRegex,
               geolocationEnabled: widget.geolocationEnabled,
+              permissions: widget.permissions,
               debuggingEnabled: widget.debuggingEnabled,
               ignoreSSLErrors: widget.ignoreSSLErrors,
             );
