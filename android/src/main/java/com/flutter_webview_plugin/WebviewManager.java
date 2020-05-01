@@ -279,6 +279,7 @@ class WebviewManager {
                     return;
                 }
 
+
                 // add custom view to container and save reference
                 customView = view;
                 customViewCallback = callback;
@@ -290,6 +291,23 @@ class WebviewManager {
                 customView.setVisibility(View.VISIBLE);
                 FrameLayout contentView = (FrameLayout)rootView.findViewById(android.R.id.content);
                 contentView.setVisibility(View.GONE);
+                
+                try{
+                     View decorView = activity.getWindow().getDecorView();
+            decorView.setSystemUiVisibility(
+            View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+            // Set the content to appear under the system bars so that the
+            // content doesn't resize when the system bars hide and show.
+            | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+            // Hide the nav bar and status bar
+            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+            | View.SYSTEM_UI_FLAG_FULLSCREEN);
+                }
+                catch (Exception e) {
+                        
+                 }
             }
 
             @Override
@@ -308,6 +326,22 @@ class WebviewManager {
                 rootView.removeView(customView);
                 customViewCallback.onCustomViewHidden();
                 customView = null;
+
+                try{
+                
+                    View decorView = activity.getWindow().getDecorView();
+                    decorView.setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+
+                } 
+                catch (Exception e) {
+                        
+                 }
+
+          
+
             }
 
             public void onGeolocationPermissionsShowPrompt(String origin, GeolocationPermissions.Callback callback) {
