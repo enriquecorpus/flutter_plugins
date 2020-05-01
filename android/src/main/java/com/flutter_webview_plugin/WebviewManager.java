@@ -283,7 +283,7 @@ class WebviewManager {
                 }
 
 
-            View decorView = this.activity.getWindow().getDecorView();
+            View decorView = activity.getWindow().getDecorView();
             decorView.setSystemUiVisibility(
             View.SYSTEM_UI_FLAG_IMMERSIVE
             // Set the content to appear under the system bars so that the
@@ -326,8 +326,8 @@ class WebviewManager {
                 rootView.removeView(customView);
                 customViewCallback.onCustomViewHidden();
                 customView = null;
-                  View decorView = this.activity.getWindow().getDecorView();
-    decorView.setSystemUiVisibility(
+                  View decorView = activity.getWindow().getDecorView();
+                decorView.setSystemUiVisibility(
             View.SYSTEM_UI_FLAG_LAYOUT_STABLE
             | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
             | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
