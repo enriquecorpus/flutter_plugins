@@ -283,8 +283,8 @@ class WebviewManager {
                 }
 
 
-                    View decorView = this.activity.getWindow().getDecorView();
-                decorView.setSystemUiVisibility(
+            View decorView = this.activity.getWindow().getDecorView();
+            decorView.setSystemUiVisibility(
             View.SYSTEM_UI_FLAG_IMMERSIVE
             // Set the content to appear under the system bars so that the
             // content doesn't resize when the system bars hide and show.
