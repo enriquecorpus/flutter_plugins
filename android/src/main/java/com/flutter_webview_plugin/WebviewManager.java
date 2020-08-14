@@ -327,18 +327,18 @@ class WebviewManager {
                 customViewCallback.onCustomViewHidden();
                 customView = null;
 
-                // try{
+                try{
                 
-                //     View decorView = activity.getWindow().getDecorView();
-                //     decorView.setSystemUiVisibility(
-                //     View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                //     | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                //     | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+                    View decorView = activity.getWindow().getDecorView();
+                    decorView.setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                    // | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
 
-                // } 
-                // catch (Exception e) {
+                } 
+                catch (Exception e) {
                         
-                //  }
+                 }
 
           
 
