@@ -308,7 +308,7 @@ class WebviewManager {
             //     catch (Exception e) {
                         
             //      }
-            // }
+            }
 
             @Override
             public void onHideCustomView() {
